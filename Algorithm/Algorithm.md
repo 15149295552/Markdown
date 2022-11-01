@@ -77,4 +77,42 @@ hanoi(3, 'A', 'B', 'C')
 * 查找：在一些数据元素中，通过一定的方法找出与给定关键字相同的数据元素的过程
 * 列表查找（线性表查找）：从列表中查找指定元素
   * 输入：列表、待查找元素
-  * 
+  * 输出：元素下标（未找到元素时一般返回None或-1）
+* 内置列表查找函数：index()
+
+## 3.2 顺序查找
+
+* 顺序查找：也叫线性查找，从列表第一个元素开始，顺序进行搜索，直到找到元素或搜索到列表最后一个元素为止。
+  ```python
+  def linear_search(li, val):
+      for ind, v in enumerate(li):
+          if v == val:
+              return ind
+      return None
+  ```
+
+* 时间复杂度：$O(n)$
+
+## 3.3 二分查找
+
+* 二分查找：又叫折半查找，从有序列表的初始候选区li[0:n]开始，通过对待查找的值与候选区中间值的比较，可以使候选区减少一半。
+  ```python
+  def binary_search(li, val):
+      left = 0
+      right = len(li) - 1
+      while left <= right:  # 候选区有值
+          mid = (left + right) // 2
+          if li[mid] == val:
+              return mid
+          elif li[mid] > val:  # 待查找的值在mid左侧
+              right = mid - 1
+          else:  # li[mid] < val 待查找的值mid右侧
+              left = mid + 1
+      return None
+  
+  
+  li = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  print(binary_search(li, 3))
+  ```
+
+  
