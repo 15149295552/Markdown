@@ -1058,7 +1058,7 @@ def xxx_view(request)
   1. 对于复杂业务，使用成本较高
   2. 根据对象的操作转换成SQL语句,根据查询的结果转化成对象, 在映射过程中有性能损失.
 - ORM 示意
-  - ![](E:\工作相关\讲课文件\FORTH_PROJECT\AIDTN2206\01_DJANGO\day03\images\orm.png)
+  - ![](./images/orm.png)
 
 ### 2.4 模型示例
 
