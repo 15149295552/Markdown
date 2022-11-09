@@ -2860,3 +2860,6 @@ mail.send_mail(
             recipient_list=['xxx@qq.com'],  # 接收者邮件列表
             )
 ```
+
+
+
