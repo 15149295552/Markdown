@@ -205,16 +205,29 @@ persist key
 
 ```python
 1、查看 db0 库中所有的键
+# SELECT 0
+# KEYS *
 2、设置键 trill:username 对应的值为 user001，并查看
+# SET trill:username user001
 3、获取 trill:username 值的长度
+# STRLEN trill:username
 4、一次性设置 trill:password 、trill:gender、trill:fansnumber 并查看（值自定义）                 
+# MSET trill:password 123456 trill:gender M trill:fansnumber 100
 5、查看键 trill:score 是否存在
+# EXISTS trill:score
 6、增加10个粉丝
+# INCRBY trill:fansnumber 10
 7、增加2个粉丝（一个一个加）
+# INCR trill:fansnumber
+# INCR trill:fansnumber
 8、有3个粉丝取消关注你了
+# DECRBY trill:fansnumber 3
 9、又有1个粉丝取消关注你了
+# DECR trill:fansnumber
 10、思考、思考、思考...,清除当前库
+# FLNUSHDB
 11、一万个思考之后，清除所有库
+# FLUSHALL
 ```
 
 
@@ -294,14 +307,23 @@ persist key
 
 ```python
 1、查看所有的键
+# KEYS *
 2、向列表 spider:urls 中以RPUSH放入如下几个元素：01_baidu.com、02_taobao.com、03_sina.com、04_jd.com、05_xxx.com
+# RPUSH spider:urls 01_baidu.com 02_taobao.com 03_sina.com 04_jdcom 05_xxx.com
 3、查看列表中所有元素
+# LRANGE spider:urls 0 -1
 4、查看列表长度
+# LLEN spider:urls
 5、将列表中01_baidu.com 改为 01_tmall.com
+# LSET spider:urls 0 01_tmall.com
 6、在列表中04_jd.com之后再加1个元素 02_taobao.com
+# LINSERT spider:urls after 04_jd.com 02_taobao.com
 7、弹出列表中的最后一个元素
+# RPOP spider:urls
 8、删除列表中所有的 02_taobao.com
+# LREM spider:urls 0 02_taobao.com
 9、剔除列表中的其他元素，只剩前3条
+# LIRIM spider:urls 0 2
 ```
 
 
@@ -986,3 +1008,5 @@ everysec和no都很快，默认值为everysec
 5、把6401的redis设置为6400redis的salve
    redis-cli -p 6401
    redis>slaveof 127.0.0.1 6400
+```
+
