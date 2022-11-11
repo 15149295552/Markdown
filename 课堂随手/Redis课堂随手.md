@@ -274,7 +274,45 @@
   vim appendonly.aof
 ```
 
+## 五、主从加哨兵
 
+### 1）特点
+
+* 主-master，负责读写数据，并将数据同步给从服务器slave。
+* 从-slaves，只能读数据，不能写。
+
+### 2）配置主从+哨兵
+
+* 命令行或者配置文件中增加主从配置
+
+  `slaveof master-ip master-port`
+
+* 配置哨兵sentinel
+
+  * 不断检查master和slaves是否正常。
+  * 一旦master挂掉，哨兵会第一时间从slaves中提升一个作为新的master，并将其他的slave设置为新的从。
+
+* 配置哨兵步骤
+
+  * 安装哨兵：`sudo apt install redis-sentinel`
+
+  * 配置文件相关配置
+
+    **新建配置文件：sentinel.conf**
+
+    ```python
+    port 6666
+    sentinel monitor 业务名 master-ip master-port quorum
+    ```
+
+  * 启动哨兵监控
+
+    `redis-sentinel sentinel.conf`
+
+  * 测试
+
+    * 挂掉master：`sudo /etc/init.d/redis-server stop`
+    * 观察哨兵终端日志
 
 
 
