@@ -1284,7 +1284,7 @@ mail.send_mail(
       type: 'post',
       data: {'uname': xxx, 'pwd': xxx},
       success: function(resp){
-          
+          xxx
       }
   })
   ```

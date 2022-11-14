@@ -21,8 +21,6 @@ python3 setup.py build
 python3 setup.py install
 ```
 
-
-
 <font color=blue>名词解释：</font>
 
 broker - 消息传输的中间件，生产者一旦有消息发送，将发至broker；【RQ，redis】
@@ -76,8 +74,6 @@ task_test.delay()
 
 ![1572965545212](images\1572965545212.png)
 
-
-
 #### 	2.3 存储执行结果
 
 ​	Celery提供存储任务执行结果的方案，需借助 redis 或 mysql  或Memcached 等
@@ -113,8 +109,6 @@ celery -A tasks_result worker --loglevel=info
 from tasks_result import task_test
 s = task_test.delay(10,100)
 ```
-
-
 
 ### 3. Django + Celery
 
