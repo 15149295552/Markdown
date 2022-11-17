@@ -25,7 +25,7 @@ python3 setup.py install
 
 broker - 消息传输的中间件，生产者一旦有消息发送，将发至broker；【RQ，redis】
 
-backend -   用于存储消息/任务结果，如果需要跟踪和查询任务状态，则需添加要配置相关
+backend - 用于存储消息/任务结果，如果需要跟踪和查询任务状态，则需添加要配置相关
 
 worker - 工作者 - 消费/执行broker中消息/任务的进程
 
