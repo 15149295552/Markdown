@@ -192,11 +192,9 @@ xhr.send('请求数据');
 //请求数据同查询字符串 "uname=guoxiaonao&age=18"
 ```
 
-
 ## 2. jquery对 ajax 的支持
 
-
-#### 2.1 $.get() 和 $.post()
+#### 2.1 \$.get() 和 \$.post()
 
 ​		作用：通过get方式异步的向远程地址发送请求
 
