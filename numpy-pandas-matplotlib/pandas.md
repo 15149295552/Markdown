@@ -147,11 +147,7 @@ print(df.head(3)) # df的前三行
 print(df.tail(3)) # df的后三行
 ```
 
-
-
 #### 核心数据结构操作
-
-
 
  行和列的增删改查
 
@@ -168,8 +164,6 @@ df = pd.DataFrame(d)
 
 df['one']
 df[df.columns[:2]]
-
-
 ```
 
 **列添加**
@@ -218,21 +212,11 @@ df2 = df.drop(['one','four'],axis=1,inplace=True)
 print(df2)
 ```
 
-
-
------
-
-
-
 **行访问**
 
 如果只是需要访问DataFrame某几行数据的实现方式则采用数组的选取方式，使用 ":" 即可：
 
-
-
 ```python
-
-
 import pandas as pd
 
 d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
@@ -243,8 +227,6 @@ print(df[2:4])
 ```
 
 **loc**是针对DataFrame索引名称的切片方法。loc方法使用方法如下：
-
-
 
 ​	只支持索引名称，不支持索引位置
 
@@ -321,23 +303,13 @@ print(df)
 
 ![IOtools](.\images\IOtools.png)
 
-
-
 读HTML中的内容，要求：在HTML中必须要有table标签
-
-
-
-
 
 #### 处理普通文本
 
 读取文本：read_csv()  
 
-
-
 csv文件 逗号分隔符文件   数据与数据之间使用逗号分隔
-
-
 
 | 方法参数           | 参数解释                                            |
 | ------------------ | --------------------------------------------------- |
@@ -349,10 +321,6 @@ csv文件 逗号分隔符文件   数据与数据之间使用逗号分隔
 | usecols            | 选择读取文件中的某些列。设置为为相应列的索引列表。  |
 | skiprows           | 跳过行。可选择跳过前n行或给出跳过的行索引列表。     |
 | encoding           | 编码。                                              |
-
-
-
-
 
 写入文本：dataFrame.to_csv()
 
@@ -387,8 +355,6 @@ pd.read_csv('../data/CustomerSurvival.csv', header=None, index_col=0)
 pd.read_json('../data/ratings.json')
 ```
 
-
-
 写入json：to_json()
 
 | 方法参数           | 参数解释                                                    |
@@ -406,17 +372,9 @@ df.to_json(orient='records')
 
 其他文件读取方法参见：<https://www.pypandas.cn/docs/user_guide/io.html>
 
-
-
 读取excel文件内容
 
 read_excel()
-
-
-
-
-
-
 
 ### 数值型描述统计
 
@@ -429,8 +387,6 @@ $S = [s_1, s_2, ..., s_n] $
 $mean = \frac{(s_1 + s_2 + ... + s_n) }{n}$
 
 算数平均值表示对真值的无偏估计。
-
-
 
 ```python
 m = np.mean(array)
@@ -514,13 +470,9 @@ print(np.maximum(a, b), np.minimum(a, b), sep='\n')
 
 [1 2 3 4 5 4 3 2 1]
 
-
-
 #### 中位数
 
 将多个样本按照大小排序，取中间位置的元素。
-
-
 
 **若样本数量为奇数，中位数为最中间的元素**
 
@@ -552,13 +504,7 @@ median = np.median(closing_prices)
 print(median)
 ```
 
-
-
 #### 标准差
-
-
-
-
 
 样本（sample）：
 $$
@@ -573,21 +519,11 @@ $$
 D = [d_1, d_2, d_3, ..., d_n]\\
 d_i = S_i-m
 $$
-​				
-
-​					
-
 离差方：
 $$
 Q = [q_1, q_2, q_3, ..., q_n]\\
 q_i=d_i^2
 $$
-​			
-
-
-
-
-
 总体方差（variance）：
 $$
 v = \frac{(q_1+q_2+q_3 + ... + q_n)}{n}
@@ -598,23 +534,12 @@ $$
 
 ​		方差越小，震荡越平缓
 
-
-
-
-
-​		
-
 总体标准差（standard deviation）：
 $$
 s = \sqrt{v}
 $$
-​			
-
-
-
-
-
 样本方差：
+
 $$
 v' = \frac{(q_1+q_2+q_3 + ... + q_n)}{n-1}   ,  v = \frac{(q_1+q_2+q_3 + ... + q_n)}{n}
 $$
@@ -629,8 +554,6 @@ $$
 ```python
 ratings.std(axis=0)
 ```
-
-
 
 
 
