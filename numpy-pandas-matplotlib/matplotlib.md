@@ -38,7 +38,7 @@ linewidth：线宽
 
 color：颜色（red, blue, green）
 
-​	英文单词: red  blue   green  black oragered
+​	英文单词: red  blue   green  black orangered
 
 ​	字符串: #aabbcc
 
@@ -49,8 +49,6 @@ color：颜色（red, blue, green）
  
 
 alpha: 设置透明度（0~1之间）
-
-
 
 案例：绘制正弦、余弦曲线，并设置线型、线宽、颜色、透明度
 
@@ -165,8 +163,6 @@ $$
 x^n+y^n=z^n,  \int\frac{1}{x} dx = \ln |x| + C,     -\frac{\pi}{2}
 $$
 
-
-
 ##### 5）设置坐标轴
 
 ![坐标轴格式](./images\坐标轴格式.png)
@@ -206,17 +202,11 @@ ax.spines['right'].set_color('none')  # 设置右部轴无色
 plt.show()
 ```
 
-
-
 ##### 6）图例
 
 显示两条曲线的图例，并测试loc属性。
 
-
-
 ​	描述这个图所画的内容
-
-
 
 ```python
 # 再绘制曲线时定义曲线的label
@@ -242,8 +232,6 @@ plt.plot(xarray, yarray ... label='', ...)
 plt.legend(loc='')
 
 如果想要使用legend ,需要在plot画图的时候，指定参数label    可以写latex
-
-
 ```
 
 ##### 7）特殊点
@@ -278,13 +266,9 @@ plt.scatter(x_tck,  # x坐标数组
             zorder=3)  # 图层编号
 ```
 
-
-
 *marker点型可参照：help(matplotlib.markers)*
 
 *也可参照附录： matplotlib point样式*
-
-
 
 #### 高级绘图
 
@@ -323,7 +307,6 @@ plt.tick_params(..., labelsize=8, ...)
 plt.grid(linestyle='')
 # 设置紧凑布局，把图表相关参数都显示在窗口中
 plt.tight_layout() 
-
 ```
 
 示例：绘制两个图像窗口
@@ -356,8 +339,6 @@ plt.show()
 ​	所有的图，都是规则的
 
 ​	所以的图的大小都是一样的
-
-​	
 
 ```python
 plt.figure('Subplot Layout', facecolor='lightgray')
@@ -419,7 +400,6 @@ plt.figure('Grid Layout', facecolor='lightgray')
 plt.subplot(gs[0, :2])    [行,列]
 plt.text(0.5, 0.5, '1', ha='center', va='center', size=36)
 plt.show()
-
 ```
 
 案例：绘制一个自定义网格布局。
@@ -434,14 +414,9 @@ plt.text(0.5, 0.5, 1, ha='center', va='center', size=36)
 plt.tight_layout()
 plt.xticks([])
 plt.yticks([])
-
 ```
 
-
-
 ##### 2）散点图
-
-
 
 可以通过每个点的坐标、颜色、大小和形状表示不同的特征值。
 

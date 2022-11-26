@@ -419,7 +419,6 @@ $$
 
 ```
 a = np.average(array, weights=volumes)
-
 ```
 
 案例：自定义权重，求加权平均。
@@ -554,12 +553,4 @@ $$
 ```python
 ratings.std(axis=0)
 ```
-
-
-
-
-
-
-
-
 
