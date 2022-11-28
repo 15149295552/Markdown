@@ -2,10 +2,6 @@
 
 #### matplotlib基本功能详解
 
-
-
-
-
 #### 基本绘图
 
 ##### 1）绘图核心API
@@ -46,8 +42,6 @@ color：颜色（red, blue, green）
 
 ​			(0.3,0.4,0.5,0.6) r,g,b,a
 
- 
-
 alpha: 设置透明度（0~1之间）
 
 案例：绘制正弦、余弦曲线，并设置线型、线宽、颜色、透明度
@@ -69,7 +63,6 @@ plt.plot(x, y2, label="cos", linestyle="--", linewidth=4)  # 虚线，线宽4像
 
 plt.xlabel("x")  # x轴文字
 plt.ylabel("y")  # y轴文字
-
 # 设置坐标轴范围
 plt.xlim(0, 2 * math.pi)
 plt.ylim(-1, 2)
@@ -78,8 +71,6 @@ plt.title("sin & cos")  # 图标题
 plt.legend()  # 图例
 plt.show()
 ```
-
-
 
 ##### 3）设置坐标轴范围
 
@@ -147,8 +138,6 @@ plt.title("square")  # 图标题
 plt.legend(loc="upper right")  # 图例 upper right, center
 plt.show()
 ```
-
-
 
 ***刻度文本的特殊语法*** -- *LaTex排版语法字符串*
 
@@ -250,8 +239,6 @@ plt.scatter(xarray, yarray,
            facecolor='',	#填充色
            zorder=3			#绘制图层编号 （编号越大，图层越靠上）
 )
-
-
 ```
 
 示例：在二次函数图像中添加特殊点
