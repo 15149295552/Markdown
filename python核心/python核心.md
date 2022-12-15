@@ -113,17 +113,15 @@
 
 - **操作系统**
 
-​        -- 管理和控制计算机软件与硬件资源的**程序**。
+​       -- 管理和控制计算机软件与硬件资源的**程序**。
 
-​        -- 隔离不同硬件的差异，使软件开发简单化。
+​       -- 隔离不同硬件的差异，使软件开发简单化。
 
-​        -- 常见操作系统：Windows，Linux（Ubuntu、CentOS、Redhat、Android、HarmonyOS、YunOS），Unix（macOS）。
+​       -- 常见操作系统：Windows，Linux（Ubuntu、CentOS、Redhat、Android、HarmonyOS、YunOS），Unix（macOS）。
 
 - **应用软件**
 
-  
-
-  -- 为了某种特定的用途而被开发的软件。
+  ​	-- 为了某种特定的用途而被开发的软件。
 
 ---
 
