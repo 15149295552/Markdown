@@ -230,8 +230,6 @@ persist key
 # FLUSHALL
 ```
 
-
-
 ### 4.2 列表数据类型（List）
 
 - **特点**
