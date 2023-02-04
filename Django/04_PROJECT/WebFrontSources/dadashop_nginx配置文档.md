@@ -20,6 +20,8 @@ tarena@aid:~$ sudo sudo /etc/init.d/nginx [start|restart|stop]
 
 <font color=red>ubuntu版本中的nginx HTML 页面的路径为 　**/var/www/html**</font>
 
+
+
 ### 2. nginx 配置 - 前端页面
 
 1. 创建dadashop项目配置文件
@@ -67,6 +69,8 @@ tarena@aid:~$ sudo sudo /etc/init.d/nginx [start|restart|stop]
    	sudo /etc/init.d/nginx restart
    ```
 
+
+
 ### 3. 创建存放html目录及拷贝文件 
 
 1. 创建 /var/www/html/dadashop/ 目录
@@ -81,6 +85,8 @@ tarena@aid:~$ sudo sudo /etc/init.d/nginx [start|restart|stop]
    #假设client文件夹已在ubuntu主目录下，则执行如下命令即可
    sudo cp -fr client/.  /var/www/html/dadashop/
    ```
+
+
 
 ### 4. 验证
 
