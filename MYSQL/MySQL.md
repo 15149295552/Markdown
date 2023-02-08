@@ -720,7 +720,7 @@ SELECT column1, column2, columnN
 FROM table_name
 WHERE field
 LIMIT [num] [OFFSET num]
-
+# OFFSET表示要跳过的数量
 ```
 
 ```sql
