@@ -1073,7 +1073,7 @@ select *,dense_rank() over (partition by country order by attack desc) as rankin
 
 
 
-```
+```mysql
 聚合练习
 
 1. 统计每位作家出版图书的平均价格
