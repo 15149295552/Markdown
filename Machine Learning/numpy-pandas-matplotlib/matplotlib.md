@@ -2,6 +2,10 @@
 
 #### matplotlib基本功能详解
 
+
+
+
+
 #### 基本绘图
 
 ##### 1）绘图核心API
@@ -34,7 +38,7 @@ linewidth：线宽
 
 color：颜色（red, blue, green）
 
-​	英文单词: red  blue   green  black orangered
+​	英文单词: red  blue   green  black oragered
 
 ​	字符串: #aabbcc
 
@@ -42,7 +46,11 @@ color：颜色（red, blue, green）
 
 ​			(0.3,0.4,0.5,0.6) r,g,b,a
 
+ 
+
 alpha: 设置透明度（0~1之间）
+
+
 
 案例：绘制正弦、余弦曲线，并设置线型、线宽、颜色、透明度
 
@@ -63,6 +71,7 @@ plt.plot(x, y2, label="cos", linestyle="--", linewidth=4)  # 虚线，线宽4像
 
 plt.xlabel("x")  # x轴文字
 plt.ylabel("y")  # y轴文字
+
 # 设置坐标轴范围
 plt.xlim(0, 2 * math.pi)
 plt.ylim(-1, 2)
@@ -71,6 +80,8 @@ plt.title("sin & cos")  # 图标题
 plt.legend()  # 图例
 plt.show()
 ```
+
+
 
 ##### 3）设置坐标轴范围
 
@@ -139,6 +150,8 @@ plt.legend(loc="upper right")  # 图例 upper right, center
 plt.show()
 ```
 
+
+
 ***刻度文本的特殊语法*** -- *LaTex排版语法字符串*
 
 ```python
@@ -151,6 +164,8 @@ r'$latex表达式$'
 $$
 x^n+y^n=z^n,  \int\frac{1}{x} dx = \ln |x| + C,     -\frac{\pi}{2}
 $$
+
+
 
 ##### 5）设置坐标轴
 
@@ -191,11 +206,17 @@ ax.spines['right'].set_color('none')  # 设置右部轴无色
 plt.show()
 ```
 
+
+
 ##### 6）图例
 
 显示两条曲线的图例，并测试loc属性。
 
+
+
 ​	描述这个图所画的内容
+
+
 
 ```python
 # 再绘制曲线时定义曲线的label
@@ -221,6 +242,8 @@ plt.plot(xarray, yarray ... label='', ...)
 plt.legend(loc='')
 
 如果想要使用legend ,需要在plot画图的时候，指定参数label    可以写latex
+
+
 ```
 
 ##### 7）特殊点
@@ -239,6 +262,8 @@ plt.scatter(xarray, yarray,
            facecolor='',	#填充色
            zorder=3			#绘制图层编号 （编号越大，图层越靠上）
 )
+
+
 ```
 
 示例：在二次函数图像中添加特殊点
@@ -253,9 +278,13 @@ plt.scatter(x_tck,  # x坐标数组
             zorder=3)  # 图层编号
 ```
 
+
+
 *marker点型可参照：help(matplotlib.markers)*
 
 *也可参照附录： matplotlib point样式*
+
+
 
 #### 高级绘图
 
@@ -294,6 +323,7 @@ plt.tick_params(..., labelsize=8, ...)
 plt.grid(linestyle='')
 # 设置紧凑布局，把图表相关参数都显示在窗口中
 plt.tight_layout() 
+
 ```
 
 示例：绘制两个图像窗口
@@ -326,6 +356,8 @@ plt.show()
 ​	所有的图，都是规则的
 
 ​	所以的图的大小都是一样的
+
+​	
 
 ```python
 plt.figure('Subplot Layout', facecolor='lightgray')
@@ -387,6 +419,7 @@ plt.figure('Grid Layout', facecolor='lightgray')
 plt.subplot(gs[0, :2])    [行,列]
 plt.text(0.5, 0.5, '1', ha='center', va='center', size=36)
 plt.show()
+
 ```
 
 案例：绘制一个自定义网格布局。
@@ -401,9 +434,48 @@ plt.text(0.5, 0.5, 1, ha='center', va='center', size=36)
 plt.tight_layout()
 plt.xticks([])
 plt.yticks([])
+
+```
+
+**自由式布局(很少使用)**
+
+自由式布局相关API：
+
+```python
+plt.figure('Flow Layout', facecolor='lightgray')
+# 设置图标的位置，给出左下角点坐标与宽高即可
+# left_bottom_x: 坐下角点x坐标
+# left_bottom_x: 坐下角点y坐标
+# width:		 宽度
+# height:		 高度
+# plt.axes([left_bottom_x, left_bottom_y, width, height])
+
+构建坐标系
+plt.axes([0.03, 0.03, 0.94, 0.94]) x,y,width,height
+
+	
+
+plt.text(0.5, 0.5, '1', ha='center', va='center', size=36)
+plt.show()
+
+```
+
+案例：测试自由式布局，定位子图。
+
+```python
+plt.figure('FlowLayout', facecolor='lightgray')
+
+plt.axes([0.1, 0.2, 0.5, 0.3])
+plt.text(0.5, 0.5, 1, ha='center', va='center', size=36)
+plt.show()
+
 ```
 
 ##### 2）散点图
+
+​	画图简单，作用非常厉害
+
+
 
 可以通过每个点的坐标、颜色、大小和形状表示不同的特征值。
 
@@ -525,6 +597,8 @@ plt.show()
 
 ##### 4）条形图（柱状图）
 
+​	最熟悉的
+
 绘制柱状图的相关API：   (bar)
 
 ```python
@@ -590,6 +664,26 @@ plt.show()
 
 
 
+
+
+黑白图片 ： 一个二维数组
+
+​		灰度值： 0-255
+
+​			越接近0  越黑
+
+​			越接近255  越白
+
+
+
+
+
+彩色图片： 多个二维数组
+
+
+
+
+
 直方图：数值分布的密度
 
 绘制直方图相关API：
@@ -601,6 +695,11 @@ plt.hist(
     color, 				# 颜色
     edgecolor 			# 边缘颜色
 )
+
+
+
+连续型
+离散型
 ```
 
 案例：绘制统计直方图显示图片像素亮度分布：
